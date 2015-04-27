@@ -1,0 +1,4 @@
+/*
+	Small jsp files included on other pages
+	Links
+*/
