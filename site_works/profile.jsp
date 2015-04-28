@@ -29,5 +29,7 @@
 </tr>
 </table>
 
+<a href="menu.jsp">Return to Menu</a>
+
 </body>
 </html>
