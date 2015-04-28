@@ -3,15 +3,17 @@
 */
 package control;
 public class Login{
-	private String test = "THIS IS A TEST";
+	private String logReturn = "";
 	private int foo = 9001;
 	
-	public void setTest(String t) {
-		this.test = t;
+	public void setLogReturn(String t) {
+		this.logReturn = t;
 	}
-
-	public String getTest() {
-		return test;
+	public void addToLogReturn(String a) {
+		this.logReturn += a;
+	}
+	public String getLogReturn() {
+		return logReturn;
 	}
 	public void setFoo(int n) {
 		foo = n;

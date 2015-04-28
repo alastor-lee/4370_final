@@ -1,4 +1,3 @@
-//set class path?
 package control;
 import java.io.*;
 import javax.servlet.*;
@@ -11,8 +10,7 @@ public class LoginServlet extends HttpServlet {
 	throws ServletException, IOException
 	{
 		Login bean = new Login();
-		bean.setTest(request.getParameter("user"));
-		request.setAttribute("stringTest", bean);
+
 		//String address = "/site_works/login.jsp";
 		//RequestDispatcher dispatcher = request.getRequestDispatcher(address);
 		//dispatcher.forward(request, response);
@@ -22,11 +20,45 @@ public class LoginServlet extends HttpServlet {
 		final String DB_URL="jdbc:mysql://localhost:3306/music";
 
 		//Credentials
-		//final String USER = request.getParameter("user");
-		//final String PASS = request.getParameter("pass");
-		final String USER = "root";
-		final String PASS = "jakill990";
+		final String USER = request.getParameter("user");
+		final String PASS = request.getParameter("pass");
+		//final String USER = "root";
+		//final String PASS = "jakill990";
 
+		//String returnStr = new String();
+		
+		try {
+			//TEST
+			bean.setLogReturn("HALP ME PLOX");
+
+			//Register JDBC driver
+			Class.forName("com.mysql.jdbc.Driver").newInstance();
+			Connection conn = DriverManager.getConnection(DB_URL,USER,PASS);
+			
+			//setting session info
+			//this only happens if the connection works
+			HttpSession session = request.getSession(true);
+			//session creation time
+			Date createTime = new Date(session.getCreationTime());
+			Date lastAccessTime = new Date(session.getLastAccessedTime());
+			//bean.setLogReturn("Current Session Time: " + createTime.toString() + "\n");
+
+			if(session.isNew()) {
+				//returnStr += "New User \n";
+				session.setAttribute("userID", USER);
+				session.setAttribute("passID", PASS);
+			} else {
+				//returnStr += "Returning User \n";
+			}
+			conn.close();
+
+			//returning info to login.jsp
+			String address = "/site_works/login.jsp";
+			request.setAttribute("forPrint", bean);
+			RequestDispatcher dispatcher = request.getRequestDispatcher(address);
+			dispatcher.forward(request, response);
+
+		/* FOR WRITING TO BROWSER
 		//setting response Content type
 		response.setContentType("text/html");
 		PrintWriter out = response.getWriter();
@@ -69,16 +101,17 @@ public class LoginServlet extends HttpServlet {
 			//clean up environment
 			rs.close();
 			stmt.close();
-			conn.close();
+			END OF WRITE STATEMENT	*/ 
 
 		} catch(SQLException se) {
 			//errors for JDBC
+			response.sendRedirect("localhost:8080/4370_final/site_works/login.jsp");
 			se.printStackTrace();
 		} catch(Exception e) {
 			//Errors for Class.forName
 			e.printStackTrace();
 		}
-		out.println("</body></html>");
+		//out.println("</body></html>");
 		/*
 		finally {
 			//for closing resources

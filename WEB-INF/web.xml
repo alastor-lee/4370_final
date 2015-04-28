@@ -24,7 +24,7 @@ http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
 <!-- MAPPINGS -->
 <servlet-mapping>
 	<servlet-name>LoginServlet</servlet-name>
-	<url-pattern>/control/login</url-pattern>
+	<url-pattern>/site_works/log</url-pattern>
 </servlet-mapping>
 
 <!--
