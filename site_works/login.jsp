@@ -15,8 +15,11 @@ Password: <input type="password" name="pass"> </input> <br>
 </form>
 
 <h2>SQL Results</h2>
-<p>??? ${stringTest.string}</p>
 
+<!--
+<p>??? ${stringTest.foo}</p>
+<p>??? ${stringTest.test}</p>
+-->
 
 </body>
 </html>

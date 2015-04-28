@@ -21,10 +21,16 @@ http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
 	<servlet-class>control.LoginServlet</servlet-class>
 </servlet>
 
-
+<!-- MAPPINGS -->
 <servlet-mapping>
 	<servlet-name>LoginServlet</servlet-name>
 	<url-pattern>/control/login</url-pattern>
 </servlet-mapping>
 
+<!--
+<servlet-mapping>
+	<servlet-name>LoginServlet</servlet-name>
+	<url-pattern>LoginServlet</url-pattern>
+</servlet-mapping>
+-->
 </web-app>
