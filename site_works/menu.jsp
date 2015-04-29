@@ -5,31 +5,29 @@
 <link href='http://fonts.googleapis.com/css?family=Bitter' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" type="text/css" href="Style.css"/>
 </head>
+	<body>
+		<p>${forPrint.logReturn}</p>
+		<h1>Main Menu</h1>
 
-<body>
-<h1>Main Menu</h1>
+		<form name="view_profile" action="./profile">
+			<input type="submit" value="Profile">
+		</form>
 
-<p>${forPrint.logReturn}</p>
+		<form name="inventory_view" action="./inventory">
+			<input type="submit" value="Inventory">
+		</form>
 
-<form action="register.jsp">
-<input type="submit" value="Register" class="menu">
-</form>
+		<form action="viewcart.jsp">
+			<input type="submit" value="Shopping Cart">
+		</form>
 
-<form action="profile.jsp">
-<input type="submit" value="Profile" class="menu">
-</form>
+		<form action="register.jsp">
+			<input type="submit" value="Register">
+		</form>
 
-<form action="inventory.jsp">
-<input type="submit" value="Inventory" class="menu">
-</form>
+		<form name="logout" action="./logout">
+			<input type="submit" value="Logout">
+		</form>
 
-<form action="viewcart.jsp">
-<input type="submit" value="Shopping Cart" class="menu">
-</form>
-
-<form name="logout" action="./logout">
-<input type="submit" value="Logout" class="menu">
-</form>
-
-</body>
+	</body>
 </html>

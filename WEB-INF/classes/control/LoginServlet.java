@@ -31,11 +31,12 @@ public class LoginServlet extends HttpServlet {
 			Time createTime = new Time(session.getCreationTime());
 			Time lastAccessTime = new Time(session.getLastAccessedTime());
 			//bean.setLogReturn("Current Session Time: " + createTime.toString() + "\n");
-			bean.setLogReturn("Created: "+lastAccessTime.toString()+" Current Sess: "+createTime.toString() + "<br />");
+			bean.setLogReturn("Created: "+createTime.toString()+" Current Sess: "+lastAccessTime.toString()+ "<br />");
 			bean.addToLogReturn(session.getId() + "<br />");
 			session.setAttribute("userID", USER);
 			session.setAttribute("passID", PASS);
 
+			/* NOT WORKING AND NOT NEEDED IMO
 			if(session.isNew()) {
 				bean.addToLogReturn("New User <br />");
 				session.setAttribute("userID", USER);
@@ -43,6 +44,8 @@ public class LoginServlet extends HttpServlet {
 			} else {
 				bean.addToLogReturn("Welcome to returning user <br />");
 			}
+			*/
+			//getting session info for print test
 			bean.addToLogReturn((String)session.getAttribute("userID") + "<br />");
 			bean.addToLogReturn((String)session.getAttribute("passID") + "<br />");
 
