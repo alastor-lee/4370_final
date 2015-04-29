@@ -31,3 +31,13 @@ table, th, td {border: 1px solid black;}
 	font-size:1.1em;
 	position:relative;
 	left:41%;}
+
+.reg {background-color:#003600;
+	color:white;
+	border-top:		2px solid #a3ceda;
+	border-left:		2px solid #a3ceda;
+	border-right:		2px solid #4f6267;
+	border-bottom:		2px solid #4f6267;
+	padding:		10px 20px !important;
+	font-family:Bitter;
+	font-size:1.1em;}
