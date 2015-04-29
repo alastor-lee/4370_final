@@ -10,7 +10,6 @@ import java.sql.*;
 import javax.sql.*;
 
 public class InventoryServlet extends HttpServlet {
-	Login bean = new Login();
 
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
 	throws ServletException, IOException

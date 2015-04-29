@@ -1,9 +1,9 @@
 /*
-	Inventory.java
-	Bean class for InventoryServlet.java
+	Cart.java
+	Bean class for AddToCart.java
 */
 package control;
-public class Inventory{
+public class Cart{
 	private String[] inven;
 	private String feed = "";
 	private int strLength;

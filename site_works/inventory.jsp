@@ -1,4 +1,5 @@
 <%@ page import="control.Inventory" %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,7 +18,8 @@
 		
 	-->
 
-		<table> <!-- FINISH THIS TABLE OUT -->
+
+		<table>
 		<tr>
 			<td>SKU</td>
 			<td>Item</td>
@@ -35,7 +37,7 @@
 						out.println("<td>" + print[j] + "</td>");
 					}
 					//this button sends info to AddToCart
-					out.println("<td><button type=\"submit\" formaction=\"./shop\" name=\"sku\" value=\"Add To Cart\"</td>");
+					out.println("<td><form action=\"./shop\"><input type=\"submit\" name=\"sku\" value=\""+sku+"\" /></form></td>");
 					out.println("</tr>");
 				}
 			%>
