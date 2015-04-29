@@ -16,21 +16,26 @@ http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
 </resource-ref>
 -->
 
+<session-config>
+	<session-timeout>10</session-timeout>
+</session-config>
+
+
 <servlet>
 	<servlet-name>LoginServlet</servlet-name>
 	<servlet-class>control.LoginServlet</servlet-class>
 </servlet>
-
-<!-- MAPPINGS -->
 <servlet-mapping>
 	<servlet-name>LoginServlet</servlet-name>
 	<url-pattern>/site_works/log</url-pattern>
 </servlet-mapping>
 
-<!--
+<servlet>
+	<servlet-name>LogoutServlet</servlet-name>
+	<servlet-class>control.LogoutServlet</servlet-class>
+</servlet>
 <servlet-mapping>
-	<servlet-name>LoginServlet</servlet-name>
-	<url-pattern>LoginServlet</url-pattern>
+	<servlet-name>LogoutServlet</servlet-name>
+	<url-pattern>/site_works/logout</url-pattern>
 </servlet-mapping>
--->
 </web-app>

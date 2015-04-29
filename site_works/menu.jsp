@@ -9,6 +9,8 @@
 <body>
 <h1>Main Menu</h1>
 
+<p>${forPrint.logReturn}</p>
+
 <form action="register.jsp">
 <input type="submit" value="Register" class="menu">
 </form>
@@ -25,8 +27,13 @@
 <input type="submit" value="Shopping Cart" class="menu">
 </form>
 
+<<<<<<< HEAD
 <form>
 <input type="submit" value="Logout" class="menu">
+=======
+<form name="logout" action="./logout">
+<input type="submit" value="Logout">
+>>>>>>> origin/master
 </form>
 
 </body>
