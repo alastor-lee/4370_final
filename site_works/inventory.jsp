@@ -21,7 +21,7 @@
 
 		<% 	Inventory wholeInven = (Inventory)request.getAttribute("strArray"); 
 			for(int i=0; i < wholeInven.getInvenLength(); i++) {
-				out.println(wholeInven.getInven(i));
+				out.println(wholeInven.getInven(i) + "<br />");
 			}
 		%>
 	</body>
