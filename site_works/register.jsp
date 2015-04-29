@@ -3,9 +3,13 @@
 <!--Submits to register.jsp -->
 <head>
 <title>Registration</title>
+<link href='http://fonts.googleapis.com/css?family=Bitter' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" type="text/css" href="Style.css"/>
 </head>
-<body>
 
+
+<body>
+<h1>User Registration</h1>
 <form name="register">
 First Name: <input type="text" name="firstN"> <br>
 Last Name: <input type="text" name="lastN"> <br>

@@ -2,27 +2,31 @@
 <!--This is the menu.-->
 <head>
 <title>Main Menu</title>
+<link href='http://fonts.googleapis.com/css?family=Bitter' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" type="text/css" href="Style.css"/>
 </head>
+
 <body>
+<h1>Main Menu</h1>
 
 <form action="register.jsp">
-<input type="submit" value="Register">
+<input type="submit" value="Register" class="menu">
 </form>
 
 <form action="profile.jsp">
-<input type="submit" value="Profile">
+<input type="submit" value="Profile" class="menu">
 </form>
 
 <form action="inventory.jsp">
-<input type="submit" value="Inventory">
+<input type="submit" value="Inventory" class="menu">
 </form>
 
 <form action="viewcart.jsp">
-<input type="submit" value="Shopping Cart">
+<input type="submit" value="Shopping Cart" class="menu">
 </form>
 
 <form>
-<input type="submit" value="Logout">
+<input type="submit" value="Logout" class="menu">
 </form>
 
 </body>

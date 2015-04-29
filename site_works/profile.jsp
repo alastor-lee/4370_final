@@ -2,6 +2,10 @@
 <!--This is the user profile.-->
 <head>
 <title>Profile</title>
+
+<link href='http://fonts.googleapis.com/css?family=Bitter' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" type="text/css" href="Style.css"/>
+
 </head>
 
 
