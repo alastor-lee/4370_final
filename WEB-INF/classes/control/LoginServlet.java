@@ -6,54 +6,51 @@ import java.sql.*;
 import javax.sql.*;
 
 public class LoginServlet extends HttpServlet {
+	Login bean = new Login();
+
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
 	throws ServletException, IOException
 	{
-		Login bean = new Login();
-
-		//String address = "/site_works/login.jsp";
-		//RequestDispatcher dispatcher = request.getRequestDispatcher(address);
-		//dispatcher.forward(request, response);
-
 		//JDBC driver name and database URL
 		final String JDBC_DRIVER="com.mysql.jdbc.Driver";
 		final String DB_URL="jdbc:mysql://localhost:3306/music";
 
 		//Credentials
-		final String USER = request.getParameter("user");
-		final String PASS = request.getParameter("pass");
-		//final String USER = "root";
-		//final String PASS = "jakill990";
-
-		//String returnStr = new String();
+		final String USER = new String(request.getParameter("user"));
+		final String PASS = new String(request.getParameter("pass"));
 		
 		try {
-			//TEST
-			bean.setLogReturn("HALP ME PLOX");
-
 			//Register JDBC driver
 			Class.forName("com.mysql.jdbc.Driver").newInstance();
 			Connection conn = DriverManager.getConnection(DB_URL,USER,PASS);
 			
 			//setting session info
-			//this only happens if the connection works
+			//note that this only happens if the connection works
 			HttpSession session = request.getSession(true);
-			//session creation time
-			Date createTime = new Date(session.getCreationTime());
-			Date lastAccessTime = new Date(session.getLastAccessedTime());
+			//session time
+			Time createTime = new Time(session.getCreationTime());
+			Time lastAccessTime = new Time(session.getLastAccessedTime());
 			//bean.setLogReturn("Current Session Time: " + createTime.toString() + "\n");
+			bean.setLogReturn("Created: "+lastAccessTime.toString()+" Current Sess: "+createTime.toString() + "<br />");
+			bean.addToLogReturn(session.getId() + "<br />");
+			session.setAttribute("userID", USER);
+			session.setAttribute("passID", PASS);
 
 			if(session.isNew()) {
-				//returnStr += "New User \n";
+				bean.addToLogReturn("New User <br />");
 				session.setAttribute("userID", USER);
 				session.setAttribute("passID", PASS);
 			} else {
-				//returnStr += "Returning User \n";
+				bean.addToLogReturn("Welcome to returning user <br />");
 			}
+			bean.addToLogReturn((String)session.getAttribute("userID") + "<br />");
+			bean.addToLogReturn((String)session.getAttribute("passID") + "<br />");
+
+			//closing out mysql test connection
 			conn.close();
 
-			//returning info to login.jsp
-			String address = "/site_works/login.jsp";
+			//forwarding info to menu.jsp if login was successful
+			String address = "/site_works/menu.jsp";
 			request.setAttribute("forPrint", bean);
 			RequestDispatcher dispatcher = request.getRequestDispatcher(address);
 			dispatcher.forward(request, response);
@@ -101,16 +98,23 @@ public class LoginServlet extends HttpServlet {
 			//clean up environment
 			rs.close();
 			stmt.close();
-			END OF WRITE STATEMENT	*/ 
+			//END OF WRITE STATEMENT	*/ 
 
 		} catch(SQLException se) {
-			//errors for JDBC
-			response.sendRedirect("localhost:8080/4370_final/site_works/login.jsp");
+			//returning to login screen with failure
+			bean.setLogReturn("Invalid Login");
+			String address = "/site_works/login.jsp";
+			request.setAttribute("forPrint", bean);
+			RequestDispatcher dispatcher = request.getRequestDispatcher(address);
+			dispatcher.forward(request, response);
+			//printing stack
 			se.printStackTrace();
 		} catch(Exception e) {
 			//Errors for Class.forName
+			bean.addToLogReturn("Exception");
 			e.printStackTrace();
 		}
+
 		//out.println("</body></html>");
 		/*
 		finally {

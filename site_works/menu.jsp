@@ -5,6 +5,8 @@
 </head>
 <body>
 
+<p>${forPrint.logReturn}</p>
+
 <form action="register.jsp">
 <input type="submit" value="Register">
 </form>
@@ -21,7 +23,7 @@
 <input type="submit" value="Shopping Cart">
 </form>
 
-<form>
+<form name="logout" action="./logout">
 <input type="submit" value="Logout">
 </form>
 
