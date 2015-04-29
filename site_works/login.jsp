@@ -23,7 +23,7 @@ Username: <input type="text" name="user"> </input>
 <br><br>
 Password: <input type="password" name="pass"> </input> 
 <br><br>
-<input type="submit" value="Login">
+<input type="submit" value="Login" class="reg">
 </form>
 </div>
 
