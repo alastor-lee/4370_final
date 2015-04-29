@@ -2,9 +2,12 @@
 <!--This is the menu.-->
 <head>
 <title>Main Menu</title>
+<link href='http://fonts.googleapis.com/css?family=Bitter' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" type="text/css" href="Style.css"/>
 </head>
 	<body>
 		<p>${forPrint.logReturn}</p>
+		<h1>Main Menu</h1>
 
 		<form name="view_profile" action="./profile">
 			<input type="submit" value="Profile">

@@ -3,6 +3,10 @@
 <html>
 <head>
 <title>Inventory</title>
+
+<link href='http://fonts.googleapis.com/css?family=Bitter' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" type="text/css" href="Style.css"/>
+
 </head>
 	<body>
 	<!--
