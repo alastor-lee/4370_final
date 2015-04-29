@@ -39,6 +39,15 @@ http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
 </servlet-mapping>
 
 <servlet>
+	<servlet-name>AddToCart</servlet-name>
+	<servlet-class>control.AddToCart</servlet-class>
+</servlet>
+<servlet-mapping>
+	<servlet-name>AddToCart</servlet-name>
+	<url-pattern>/site_works/shop</url-pattern>
+</servlet-mapping>
+
+<servlet>
 	<servlet-name>ProfileServlet</servlet-name>
 	<servlet-class>control.ProfileServlet</servlet-class>
 </servlet>

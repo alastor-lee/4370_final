@@ -1,3 +1,7 @@
+/*
+	Called from menu.jsp
+*/
+
 package control;
 import java.io.*;
 import javax.servlet.*;
@@ -47,7 +51,7 @@ public class InventoryServlet extends HttpServlet {
 				String name = rs.getString("name");
 				int quantity = rs.getInt("qty");
 				double price = rs.getDouble("price_per");
-				temp = sku+" "+name+" "+quantity+" "+price+"<br />";
+				temp = sku+":"+name+":"+quantity+":"+price+"<br />";
 				bean.addToInven(temp, count);
 				count++;
 			}
