@@ -11,9 +11,9 @@
 		<p>${forPrint.logReturn}</p>
 
 		<form name="login" action="./log">
-		Username: <input type="text" name="user"> </input> <br>
-		Password: <input type="password" name="pass"> </input> <br>
-		<input type="submit" value="Login">
+			Username: <input type="text" name="user"> </input> <br>
+			Password: <input type="password" name="pass"> </input> <br>
+			<input type="submit" value="Login">
 		</form>
 	</body>
 </html>
